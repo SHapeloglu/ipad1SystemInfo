@@ -1,0 +1,9 @@
+Package: com.shapeloglu.ipad1systeminfo
+Name: iPad1SystemInfo
+Version: 0.1-alpha1
+Architecture: iphoneos-arm
+Description: Lightweight system information and monitoring utility for iPad 1 / iOS 5.1.1.
+Maintainer: SHapeloglu
+Author: SHapeloglu
+Section: Utilities
+Depends: firmware (>= 5.1)
