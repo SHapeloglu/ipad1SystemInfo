@@ -1,29 +1,17 @@
-# TASK.md — iPad1SystemInfo Görev Takibi
+# TASK.md — iPad1SystemInfo
 
-Bu dosya projedeki güncel görevleri takip etmek için kullanılır. Yeni bir göreve başlarken "Devam Eden"e taşı, bitirince "Tamamlanan"a taşı ve tarih ekle.
+## Next
 
-## 🔜 Sıradaki
+- [ ] Build `0.1-alpha1` and validate on the physical iPad 1: every Overview row shows a sane value (CPU % changes under load, RAM matches `hw.memsize`, `/var/mobile` storage, battery level/state, `en0` IP/MAC and RX/TX deltas), Processes tab lists PIDs
+- [ ] Measure the app's own CPU/RAM cost at 1 s / 3 s refresh; lower the rate or pause timers when the app is backgrounded if needed
+- [ ] Confirm Bluetooth row degrades to `Unavailable` without crashing when `BluetoothManager.framework` cannot be loaded
+- [ ] Verify timers are invalidated on tab switch / background (no work while hidden)
 
-- [ ] `CLAUDE.md` / `ARCHITECTURE.md` içeriğini doğrula ve eksikleri tamamla
-- [ ] Otomatik test bulunamadı — kritik akışlar için en azından duman (smoke) testleri eklenmeli.
+## In progress
 
-> Uzun vadeli / önceliklendirilmemiş fikirler için bkz. `BACKLOG.md`.
+_(none)_
 
-## 🚧 Devam Eden
+## Done
 
-_(şu anda boş)_
-
-## ✅ Tamamlanan
-
-- [x] 2026-10-05 — Proje çalışma dosyaları oluşturuldu
-
----
-
-### Görev Ekleme Şablonu
-
-```markdown
-- [ ] Kısa görev başlığı
-  - Bağlam: neden yapılıyor
-  - Kabul kriteri: ne zaman "bitti" sayılır
-  - İlgili dosyalar: ...
-```
+- [x] 2026-10-05 — CLAUDE/TASK/BACKLOG/SESSION rewritten from the source
+- [x] 2026-09-17 — v0.1-alpha1 baseline (Overview + Processes tabs, `SystemMetrics`)

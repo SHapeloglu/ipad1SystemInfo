@@ -1,42 +1,16 @@
-# SESSION.md — iPad1SystemInfo Oturum Günlüğü
+# SESSION.md — iPad1SystemInfo
 
-Her çalışma oturumunda buraya kısa bir kayıt düşülür: ne yapıldı, hangi kararlar alındı, sıradaki adım ne. Amaç, bir sonraki oturuma (veya başka bir geliştiriciye/Claude örneğine) hızlıca bağlam aktarmak.
-
----
-
-## Şablon
-
-```markdown
-## YYYY-AA-GG
-
-**Yapılanlar:**
-- ...
-
-**Alınan kararlar / neden:**
-- ...
-
-**Açık sorunlar / bilinen eksikler:**
-- ...
-
-**Sıradaki adım:**
-- ...
-```
+Add the newest entry at the top: what was done, what was validated on the device, open issues, next step.
 
 ---
 
 ## 2026-10-05
 
-**Yapılanlar:**
-- Eksik proje çalışma dosyaları oluşturuldu: `BACKLOG.md`, `CLAUDE.md`, `SESSION.md`, `TASK.md`.
-- İçerik; README, dosya yapısı, bağımlılık dosyaları ve git geçmişinden çıkarıldı.
+- Replaced the template-generated CLAUDE/TASK/BACKLOG/SESSION files with content derived from the source (`SystemMetrics.m`, view controllers, `Makefile`, `control`) and `ARCHITECTURE.md`.
+- Not yet validated on a physical device.
 
-**Açık sorunlar / bilinen eksikler:**
-- Otomatik test bulunamadı — kritik akışlar için en azından duman (smoke) testleri eklenmeli.
+---
 
-**Sıradaki adım:**
-- `CLAUDE.md` ve `ARCHITECTURE.md` içeriğini gözden geçirip proje sahibinin bilgisiyle tamamla.
+## 2026-09-17
 
-### Bu tarihten önceki son commit'ler (referans)
-
-- 2026-09-17 — feat: add iPad1SystemInfo v0.1-alpha1 baseline
-- 2026-09-17 — chore: initialize iPad1SystemInfo repository
+- Repository initialized; v0.1-alpha1 baseline: tab shell, Overview (1 s), Processes (3 s), metric collection isolated in `SystemMetrics`, Bluetooth via dynamically loaded private framework.

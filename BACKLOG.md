@@ -1,21 +1,10 @@
-# BACKLOG.md — iPad1SystemInfo Fikir / Özellik Havuzu
+# BACKLOG.md — iPad1SystemInfo
 
-Bu dosya henüz önceliklendirilmemiş, "bir gün yapılabilir" fikirler ve özellik talepleri içindir. Bir fikir somutlaşıp sıraya girdiğinde buradan çıkar, `TASK.md`ye taşınır.
+Ideas, not yet scheduled. Respect the family ownership rules: observe only.
 
-## Fikirler
-
-_(henüz boş — yeni bir fikir geldiğinde aşağıdaki şablonla ekle)_
-
-## Koddaki TODO / FIXME Notları
-
-_(kodda TODO/FIXME notu bulunamadı)_
-
-## Ekleme Şablonu
-
-```markdown
-### Başlık
-
-- **Kategori:** yeni özellik / iyileştirme / teknik borç / araştırma
-- **Neden istendi:** kısa gerekçe
-- **Notlar:** büyüklük tahmini, bağımlılıklar, riskler
-```
+- Small rolling charts (≤60 samples) for CPU, RAM and Wi-Fi rate, drawn with Core Graphics.
+- Per-process CPU/RAM (if `proc_pidinfo`-style data is reachable on iOS 5 without heavy cost).
+- Thermal / uptime / boot time rows.
+- Copy-to-clipboard or export of a diagnostics snapshot (text) for sibling apps' bug reports.
+- Low-memory warning counter (how often iOS sent memory warnings) — useful for tuning sibling apps on 256 MB.
+- Process kill is **out of scope** unless the family decides otherwise (would belong closer to iPad1Terminal).
