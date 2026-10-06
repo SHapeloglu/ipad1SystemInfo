@@ -1,10 +1,10 @@
 # BACKLOG.md — iPad1SystemInfo
 
-Ideas, not yet scheduled. Respect the family ownership rules: observe only.
+Henüz planlanmamış fikirler. Uygulama ailesi sahiplik kurallarına uy: yalnızca gözlemle.
 
-- Small rolling charts (≤60 samples) for CPU, RAM and Wi-Fi rate, drawn with Core Graphics.
-- Per-process CPU/RAM (if `proc_pidinfo`-style data is reachable on iOS 5 without heavy cost).
-- Thermal / uptime / boot time rows.
-- Copy-to-clipboard or export of a diagnostics snapshot (text) for sibling apps' bug reports.
-- Low-memory warning counter (how often iOS sent memory warnings) — useful for tuning sibling apps on 256 MB.
-- Process kill is **out of scope** unless the family decides otherwise (would belong closer to iPad1Terminal).
+- CPU, RAM ve Wi-Fi hızı için küçük döner grafikler (≤60 örnek), Core Graphics ile çizilir.
+- Süreç başına CPU/RAM (iOS 5'te `proc_pidinfo` benzeri veriye ağır maliyet olmadan erişilebiliyorsa).
+- Isı / çalışma süresi / açılış zamanı satırları.
+- Kardeş uygulamaların hata raporları için tanılama anlık görüntüsünü (metin) panoya kopyalama veya dışa aktarma.
+- Düşük bellek uyarısı sayacı (iOS'un ne sıklıkla bellek uyarısı gönderdiği) — 256 MB'ta kardeş uygulamaları ayarlamak için faydalı.
+- Süreç sonlandırma, aile aksine karar vermedikçe **kapsam dışıdır** (iPad1Terminal'e daha yakın düşer).

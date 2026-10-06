@@ -1,16 +1,16 @@
 # SESSION.md — iPad1SystemInfo
 
-Add the newest entry at the top: what was done, what was validated on the device, open issues, next step.
+En yeni kaydı en üste ekle: ne yapıldı, cihazda ne doğrulandı, açık sorunlar, sıradaki adım.
 
 ---
 
 ## 2026-10-05
 
-- Replaced the template-generated CLAUDE/TASK/BACKLOG/SESSION files with content derived from the source (`SystemMetrics.m`, view controllers, `Makefile`, `control`) and `ARCHITECTURE.md`.
-- Not yet validated on a physical device.
+- Şablondan üretilmiş CLAUDE/TASK/BACKLOG/SESSION dosyaları kaynak koddan (`SystemMetrics.m`, view controller'lar, `Makefile`, `control`) ve `ARCHITECTURE.md`'den türetilen içerikle değiştirildi.
+- Henüz fiziksel cihazda doğrulanmadı.
 
 ---
 
 ## 2026-09-17
 
-- Repository initialized; v0.1-alpha1 baseline: tab shell, Overview (1 s), Processes (3 s), metric collection isolated in `SystemMetrics`, Bluetooth via dynamically loaded private framework.
+- Repo başlatıldı; v0.1-alpha1 temel sürümü: sekme iskeleti, Genel Bakış (1 sn), Süreçler (3 sn), ölçüm toplama `SystemMetrics` içinde izole, Bluetooth dinamik yüklenen özel framework üzerinden.

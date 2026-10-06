@@ -1,26 +1,26 @@
 # CLAUDE.md — iPad1SystemInfo
 
-Lightweight system information / monitoring app for **iPad 1 / iOS 5.1.1 / armv7 / jailbreak**. Two tabs: **Overview** (device & iOS info, CPU, RAM, storage, battery, Wi-Fi IP/MAC + RX/TX totals and live rate, Bluetooth power/connection state) refreshed every second, and **Processes** (name + PID) refreshed every three seconds. Objective-C, UIKit, **non-ARC**, Theos. Version `0.1-alpha1` (`control`).
+**iPad 1 / iOS 5.1.1 / armv7 / jailbreak** için hafif sistem bilgisi / izleme uygulaması. İki sekme: saniyede bir yenilenen **Genel Bakış** (cihaz ve iOS bilgisi, CPU, RAM, depolama, pil, Wi-Fi IP/MAC + RX/TX toplamları ve anlık hız, Bluetooth güç/bağlantı durumu) ve üç saniyede bir yenilenen **Süreçler** (ad + PID). Objective-C, UIKit, **non-ARC**, Theos. Sürüm `0.1-alpha1` (`control`).
 
 - GitHub: https://github.com/SHapeloglu/ipad1SystemInfo
-- Part of the iPad 1 app family (iPad1VNC, iPad1Files, iPad1FTPDownloader, iPad1Terminal, iPad1Player, iPad1PDFReader, ipad1MailBox, ipad1docx, iPad1WebBrowser). Family ownership rules: `INTEGRATION.md` in iPad1FTPDownloader / iPad1Files. **This app only observes the device; it does not own file management, transfers, terminal or process control.**
-- Read first: `ARCHITECTURE.md` (components, data sources, constraints) → `TASK.md` → `SESSION.md`.
+- iPad 1 uygulama ailesinin parçası (iPad1VNC, iPad1Files, iPad1FTPDownloader, iPad1Terminal, iPad1Player, iPad1PDFReader, ipad1MailBox, ipad1docx, iPad1WebBrowser). Aile sahiplik kuralları: iPad1FTPDownloader / iPad1Files içindeki `INTEGRATION.md`. **Bu uygulama yalnızca cihazı gözlemler; dosya yönetimi, transfer, terminal veya süreç kontrolü sahiplenmez.**
+- Önce oku: `ARCHITECTURE.md` (bileşenler, veri kaynakları, kısıtlar) → `TASK.md` → `SESSION.md`.
 
-## Build & install
+## Derleme ve kurulum
 
 ```bash
 make clean && make package FINALPACKAGE=1        # ARCHS=armv7, TARGET=iphone:clang:6.1:5.1, -fno-objc-arc
-# copy the .deb to the iPad with legacy ssh-rsa options (see iPad1VNC PROJECT_CONTEXT.md §10), then:
+# .deb'i eski ssh-rsa seçenekleriyle iPad'e kopyala (bkz. iPad1VNC PROJECT_CONTEXT.md §10), ardından:
 dpkg -i /var/mobile/com.shapeloglu.ipad1systeminfo_<VER>_iphoneos-arm.deb
 ```
 
-`after-install` kills the running app (`killall -9 iPad1SystemInfo`).
+`after-install` çalışan uygulamayı kapatır (`killall -9 iPad1SystemInfo`).
 
-## Rules
+## Kurallar
 
-- iOS 5.1.1 APIs only; manual retain/release; no Swift/ARC/Auto Layout; no chart libraries.
-- **All low-level metric collection lives in `SystemMetrics`** (`generalRows`, `cpuRows`, `memoryRows`, `storageRows`, `networkRows`, `bluetoothRows`, `batteryRows`, `processes`). View controllers must not call Mach/sysctl/getifaddrs directly.
-- Bluetooth uses the private `BluetoothManager.framework` loaded dynamically — never hard-link it or add private headers; show `Unavailable` instead of crashing, and never fabricate Bluetooth RX/TX numbers.
-- Any history/graph buffer must be bounded (≈60 samples). Timers must be invalidated when views disappear (1 s overview / 3 s process refresh cost CPU on an A4).
-- Physical-device testing is authoritative; don't mark a feature done before it runs on the iPad.
-- At session end, add an entry to `SESSION.md` and update `TASK.md`.
+- Yalnızca iOS 5.1.1 API'leri; manuel retain/release; Swift/ARC/Auto Layout yok; grafik kütüphanesi yok.
+- **Tüm düşük seviyeli ölçüm toplama `SystemMetrics` içindedir** (`generalRows`, `cpuRows`, `memoryRows`, `storageRows`, `networkRows`, `bluetoothRows`, `batteryRows`, `processes`). View controller'lar Mach/sysctl/getifaddrs'i doğrudan çağırmamalı.
+- Bluetooth özel `BluetoothManager.framework`'ü dinamik olarak yükler — asla sabit bağlama veya özel başlık ekleme; çökmek yerine `Unavailable` göster ve Bluetooth RX/TX sayılarını asla uydurma.
+- Her geçmiş/grafik tamponu sınırlı olmalı (≈60 örnek). Görünümler kaybolunca zamanlayıcılar iptal edilmeli (1 sn genel bakış / 3 sn süreç yenilemesi A4'te CPU harcar).
+- Belirleyici olan fiziksel cihaz testidir; iPad'de çalışmadan bir özelliği bitti diye işaretleme.
+- Oturum sonunda `SESSION.md`'ye kayıt ekle ve `TASK.md`'yi güncelle. Tüm `.md` dokümanları Türkçe yazılır.

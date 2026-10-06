@@ -1,17 +1,17 @@
 # TASK.md — iPad1SystemInfo
 
-## Next
+## Sıradaki
 
-- [ ] Build `0.1-alpha1` and validate on the physical iPad 1: every Overview row shows a sane value (CPU % changes under load, RAM matches `hw.memsize`, `/var/mobile` storage, battery level/state, `en0` IP/MAC and RX/TX deltas), Processes tab lists PIDs
-- [ ] Measure the app's own CPU/RAM cost at 1 s / 3 s refresh; lower the rate or pause timers when the app is backgrounded if needed
-- [ ] Confirm Bluetooth row degrades to `Unavailable` without crashing when `BluetoothManager.framework` cannot be loaded
-- [ ] Verify timers are invalidated on tab switch / background (no work while hidden)
+- [ ] `0.1-alpha1`'i derle ve fiziksel iPad 1'de doğrula: Genel Bakış'taki her satır makul bir değer gösteriyor (CPU % yük altında değişiyor, RAM `hw.memsize` ile uyumlu, `/var/mobile` depolama, pil seviyesi/durumu, `en0` IP/MAC ve RX/TX farkları), Süreçler sekmesi PID'leri listeliyor
+- [ ] Uygulamanın 1 sn / 3 sn yenilemedeki kendi CPU/RAM maliyetini ölç; gerekirse sıklığı düşür veya uygulama arka plana geçince zamanlayıcıları duraklat
+- [ ] `BluetoothManager.framework` yüklenemediğinde Bluetooth satırının çökmeden `Unavailable`'a düştüğünü doğrula
+- [ ] Sekme değişiminde / arka planda zamanlayıcıların iptal edildiğini doğrula (gizliyken iş yapılmıyor)
 
-## In progress
+## Devam eden
 
-_(none)_
+_(yok)_
 
-## Done
+## Tamamlanan
 
-- [x] 2026-10-05 — CLAUDE/TASK/BACKLOG/SESSION rewritten from the source
-- [x] 2026-09-17 — v0.1-alpha1 baseline (Overview + Processes tabs, `SystemMetrics`)
+- [x] 2026-10-05 — CLAUDE/TASK/BACKLOG/SESSION kaynak koddan yeniden yazıldı
+- [x] 2026-09-17 — v0.1-alpha1 temel sürümü (Genel Bakış + Süreçler sekmeleri, `SystemMetrics`)
